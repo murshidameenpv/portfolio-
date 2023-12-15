@@ -1,12 +1,17 @@
-
+import { ChakraProvider } from "@chakra-ui/react";
+import { AlertProvider } from "./context/alertContext";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
- <h1>Hello world</h1>
-    </div>
-  );
+    <ChakraProvider>
+      <AlertProvider>
+        <main>
+          
+      </main>
+      </AlertProvider>
+    </ChakraProvider>
+  )
 }
 
 export default App;
