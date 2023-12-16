@@ -12,15 +12,15 @@ import { Box, HStack } from "@chakra-ui/react";
 const socials = [
   {
     icon: faEnvelope,
-    url: "mailto: hello@example.com",
+    url: "mailto: murshidmonzpv@gmail.com",
   },
   {
     icon: faGithub,
-    url: "https://github.com",
+    url: "https://github.com/murshidameenpv",
   },
   {
     icon: faLinkedin,
-    url: "https://www.linkedin.com",
+    url: "https://www.linkedin.com/in/murshid-ameen/",
   },
   {
     icon: faMedium,
@@ -28,7 +28,7 @@ const socials = [
   },
   {
     icon: faStackOverflow,
-    url: "https://stackoverflow.com",
+    url: "https://stackoverflow.com/users/21191293/murshid-ameen",
   },
 ];
 
@@ -58,19 +58,27 @@ const Header = () => {
     >
       <Box color="white" maxWidth="1280px" margin="0 auto">
         <HStack
+          spacing={4}
           px={16}
           py={4}
           justifyContent="space-between"
           alignItems="center"
         >
+         <nav>
+      <HStack spacing={4}>
+     {socials.map((social, index) => (
+      <a key={index} href={social.url} target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={social.icon} size="2x" />
+        </a>
+      ))}
+     </HStack>
+     </nav>
           <nav>
-            {/* Add social media links based on the `socials` data */}
-          </nav>
-          <nav>
-            <HStack spacing={8}>
-              {/* Add links to Projects and Contact me section */}
-            </HStack>
-          </nav>
+  <HStack spacing={8}>
+    <a href="#projects-section" onClick={handleClick("projects")}>Projects</a>
+    <a href="#contactme-section" onClick={handleClick("contactme")}>Contact Me</a>
+  </HStack>
+</nav>
         </HStack>
       </Box>
     </Box>
